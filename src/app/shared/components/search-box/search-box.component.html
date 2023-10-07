@@ -1,0 +1,10 @@
+<input
+  type="text"
+  class="bg-white text-gray-900 text-sm block w-full p-2.5 dark:bg-gray-700 dark:text-white focus:border-none focus:outline-none"
+  [placeholder]="placeholder"
+  [value]="initialValue"
+  (keyup)="onKeyPress(txtSearchInput.value)"
+  #txtSearchInput
+/>
+
+<!-- (keyup.enter)="emitValue(txtSearchInput.value); clearInput()" -->

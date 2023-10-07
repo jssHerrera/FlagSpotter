@@ -1,0 +1,19 @@
+<div class="dark:border-gray-700 mt-10 shadow-lg">
+  <div
+    class="w-full rounded-lg flex items-center pl-5 pr-5 bg-white border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+  >
+    <!-- search-box -->
+    <shared-search-box
+      [initialValue]="initialValue"
+      (onDebounce)="searchByCountry($event)"
+      placeholder="Buscar por capital"
+      class="w-full"
+    >
+    </shared-search-box>
+  </div>
+
+  <!-- dorp-list -->
+  <!-- <share-dropList class="flex-shrink-0"></share-dropList> -->
+</div>
+<share-loading-spiner *ngIf="isLoading"></share-loading-spiner>
+<countries-galery [countries]="countries"> </countries-galery>

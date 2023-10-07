@@ -1,0 +1,83 @@
+<div class="relative">
+  <div
+    (click)="toggleDropdown()"
+    class=" {{
+      isOpen ? 'text-white ' : 'text-gray-800'
+    }} dark:hover:text-white hover:cursor-pointer transform scale-100 transition-transform hover:scale-110"
+  >
+    <svg
+      class="w-4 h-4 transform  {{ isOpen ? 'rotate-180' : 'rotate-0' }} "
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 10 6"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="m1 1 4 4 4-4"
+      />
+    </svg>
+  </div>
+
+  <!-- dropList -->
+  <ng-container *ngIf="isOpen">
+    <!-- Dropdown menu -->
+    <div class="transition-all absolute mt-2 right-0 animate__animated">
+      <div class="w-36 flex flex-col bg-white rounded-md glass overflow-hidden">
+        <ul class="flex flex-col capitalize font-semibold">
+          <li>
+            <div class="w-full py-[4px] overflow-hidden">
+              <a
+                routerLink="countries/by-capital"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="drop-item drop-btn-hover group"
+              >
+                <samp
+                  class="transform scale-100 transition-transform duration-500 ease-in-out group-hover:scale-110"
+                >
+                  Capital
+                </samp>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="w-full border-t-2 border-custom py-[4px]">
+              <a
+                routerLink="countries/by-country"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="drop-item drop-btn-hover group"
+              >
+                <span
+                  class="transform scale-100 transition-transform group-hover:scale-110"
+                >
+                  Countries
+                </span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="w-full border-t-2 border-custom py-[4px]">
+              <a
+                routerLink="countries/by-region"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="drop-item drop-btn-hover group"
+              >
+                <span
+                  class="transform scale-100 transition-transform group-hover:scale-110"
+                >
+                  Region
+                </span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ng-container>
+</div>

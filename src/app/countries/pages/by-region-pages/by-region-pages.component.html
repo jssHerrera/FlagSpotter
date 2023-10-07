@@ -1,0 +1,21 @@
+<div class="mt-10 flex justify-center">
+  <ul class="inline-flex gap-4">
+    <li
+      *ngFor="let region of regions"
+      class="cursor-pointer hover:bg-slate-900 hover:text-white p-2 transition-all ease-in-out"
+      [ngClass]="{ 'bg-slate-900 text-white': selectedRegion === region }"
+      (click)="searchByRegion(region)"
+    >
+      <span class="font-semibold"> {{ region }}</span>
+    </li>
+  </ul>
+</div>
+
+<!-- <div
+    class="w-full rounded-lg flex items-center pl-5 pr-5 bg-white border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+  >
+
+
+  </div> -->
+
+<countries-galery [countries]="countries"> </countries-galery>
